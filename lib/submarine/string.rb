@@ -9,8 +9,8 @@ class String
       default = $3 || ""
 
       if replacements.has_key?(key)
-        k = replacements[key]
-        (k.nil? || k == '') ? (replacements[key] || '').strip : default.strip
+        k = replacements[key] || ''
+        (k == '') ? default.strip : k.strip
       else
         $&
       end
