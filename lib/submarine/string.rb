@@ -10,7 +10,7 @@ class String
 
       if replacements.has_key?(key)
         k = replacements[key]
-        (k.nil? || k == '') ? replacements[key].strip : default.strip
+        (k.nil? || k == '') ? (replacements[key] || '').strip : default.strip
       else
         $&
       end
